@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,61 +8,215 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h2>Syntax</h2>
-<h4>Child: ></h4>
-<code>nav>ul>li</code>
-<pre>
-&lt;nav&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
-</pre>
-Sibling: +
-div+p+bq
-<div></div>
-<p></p>
-<blockquote></blockquote>
-Climb-up: ^
-div+div>p>span+em^bq
-<div></div>
-<div>
-    <p><span></span><em></em></p>
-    <blockquote></blockquote>
-</div>
-div+div>p>span+em^^bq
-<div></div>
-<div>
-    <p><span></span><em></em></p>
-</div>
-<blockquote></blockquote>
-Grouping: ()
-div>(header>ul>li*2>a)+footer>p
-<div>
-    <header>
-        <ul>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-        </ul>
-    </header>
-    <footer>
-        <p></p>
-    </footer>
-</div>
-(div>dl>(dt+dd)*3)+footer>p
-<div>
-    <dl>
-        <dt></dt>
-        <dd></dd>
-        <dt></dt>
-        <dd></dd>
-        <dt></dt>
-        <dd></dd>
-    </dl>
-</div>
-<footer>
-    <p></p>
-</footer>
+    <ul>
+        <li>
+            <h4>Child: &gt;</h4>
+            <code>nav&gt;ul&gt;li</code>
+            <pre>
+            &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+            </pre>
+        </li>
+        <li>
+            <h4>Sibling: +</h4>
+            <code>div+p+bq</code>
+            <pre>
+            &lt;div&gt;&lt;/div&gt;
+            &lt;p&gt;&lt;/p&gt;
+            &lt;blockquote&gt;&lt;/blockquote&gt;
+            </pre>
+        </li>
+        <li>
+            <h4>Climb-up: ^</h4>
+            <code>div+div>p>span+em^bq</code>
+            <pre>
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;
+                &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;
+                &lt;blockquote&gt;&lt;/blockquote&gt;
+            &lt;/div&gt;
+            </pre>
+            <code>div+div>p>span+em^^bq</code>
+            <pre>
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;
+                &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;blockquote&gt;&lt;/blockquote&gt;
+            </pre>
+        </li>
+        <li>
+            <h4>Grouping: ()</h4>
+            <code>div>(header>ul>li*2>a)+footer>p</code>
+            <pre>
+            &lt;div&gt;
+                &lt;header&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/header&gt;
+                &lt;footer&gt;
+                    &lt;p&gt;&lt;/p&gt;
+                &lt;/footer&gt;
+            &lt;/div&gt;
+            </pre>
+            <code>(div>dl>(dt+dd)*3)+footer>p</code>
+            <pre>
+            &lt;div&gt;
+                &lt;dl&gt;
+                    &lt;dt&gt;&lt;/dt&gt;
+                    &lt;dd&gt;&lt;/dd&gt;
+                    &lt;dt&gt;&lt;/dt&gt;
+                    &lt;dd&gt;&lt;/dd&gt;
+                    &lt;dt&gt;&lt;/dt&gt;
+                    &lt;dd&gt;&lt;/dd&gt;
+                &lt;/dl&gt;
+            &lt;/div&gt;
+            &lt;footer&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/footer&gt;
+            </pre>
+        </li>
+        <li>
+            <h4>Multiplication: *</h4>
+            <code>ul>li*5</code>
+            <pre>
+            &lt;ul&gt;
+                &lt;li&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            </pre>
+        </li>
+        <li>
+            <h4>Item numbering: $</h4>
+            <code>ul>li.item$*5</code>
+            <pre>
+            &lt;ul&gt;
+                &lt;li class="item1"&gt;&lt;/li&gt;
+                &lt;li class="item2"&gt;&lt;/li&gt;
+                &lt;li class="item3"&gt;&lt;/li&gt;
+                &lt;li class="item4"&gt;&lt;/li&gt;
+                &lt;li class="item5"&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            </pre>
+            <code>h$[title=item$]{Header $}*3</code>
+            <pre>
+            &lt;h1 title="item1"&gt;Header 1&lt;/h1&gt;
+            &lt;h2 title="item2"&gt;Header 2&lt;/h2&gt;
+            &lt;h3 title="item3"&gt;Header 3&lt;/h3&gt;
+            </pre>
+            <code>ul>li.item$$$*5</code>
+            <pre>
+            &lt;ul&gt;
+                &lt;li class="item001"&gt;&lt;/li&gt;
+                &lt;li class="item002"&gt;&lt;/li&gt;
+                &lt;li class="item003"&gt;&lt;/li&gt;
+                &lt;li class="item004"&gt;&lt;/li&gt;
+                &lt;li class="item005"&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            </pre>
+            <code>ul>li.item$@-*5</code>
+            <pre>
+            &lt;ul&gt;
+                &lt;li class="item5"&gt;&lt;/li&gt;
+                &lt;li class="item4"&gt;&lt;/li&gt;
+                &lt;li class="item3"&gt;&lt;/li&gt;
+                &lt;li class="item2"&gt;&lt;/li&gt;
+                &lt;li class="item1"&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            </pre>
+            <code>ul>li.item$@3*5</code>
+            <pre>
+            &lt;ul&gt;
+                &lt;li class="item3"&gt;&lt;/li&gt;
+                &lt;li class="item4"&gt;&lt;/li&gt;
+                &lt;li class="item5"&gt;&lt;/li&gt;
+                &lt;li class="item6"&gt;&lt;/li&gt;
+                &lt;li class="item7"&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            </pre>
+        </li>
+        <li>
+            <h4>ID and CLASS attributes</h4>
+            <code>#header</code>
+            <pre>
+            &lt;div id="header"&gt;&lt;/div&gt;
+            </pre>
+            <code>.title</code>
+            <pre>
+            &lt;div class="title"&gt;&lt;/div&gt;
+            </pre>
+            <code>form#search.wide</code>
+            <pre>
+            &lt;form id="search" class="wide"&gt;&lt;/form&gt;
+            </pre>
+            <code>p.class1.class2.class3</code>
+            <pre>
+            &lt;p class="class1 class2 class3"&gt;&lt;/p&gt;
+            </pre>
+        </li>
+        <li>
+            <h4>Custom attributes</h4>
+            <code>p[title="Hello world"]</code>
+            <pre>
+            &lt;p title="Hello world"&gt;&lt;/p&gt;
+            </pre>
+            <code>td[rowspan=2 colspan=3 title]</code>
+            <pre>
+            &lt;td rowspan="2" colspan="3" title=""&gt;&lt;/td&gt;
+            </pre>
+            <code>[a='value1' b="value2"]</code>
+            <pre>
+            &lt;div a="value1" b="value2"&gt;&lt;/div&gt;
+            </pre>
+        </li>
+        <li>
+            <h4>Text: {}</h4>
+            <code>a{Click me}</code>
+            <pre>
+            &lt;a href=""&gt;Click me&lt;/a&gt;
+            </pre>
+            <code>p>{Click }+a{here}+{ to continue}</code>
+            <pre>
+            &lt;p&gt;Click &lt;a href=""&gt;here&lt;/a&gt; to continue&lt;/p&gt;
+            </pre>
+        </li>
+        <li>
+            <h4>Implicit tag names</h4>
+            <code>.class</code>
+            <pre>
+            &lt;div class="class"&gt;&lt;/div&gt;
+            </pre>
+            <code>em>.class</code>
+            <pre>
+            &lt;em&gt;&lt;span class="class"&gt;&lt;/span&gt;&lt;/em&gt;
+            </pre>
+            <code>ul>.class</code>
+            <pre>
+            &lt;ul&gt;
+                &lt;li class="class"&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            </pre>
+            <code>table>.row>.col</code>
+            <pre>
+            &lt;table&gt;
+                &lt;tr class="row"&gt;
+                    &lt;td class="col"&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            </pre>
+        </li>
+    </ul>
 </body>
+
 </html>

@@ -1,0 +1,27 @@
+body {
+  background: local;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  color: white;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 1400px;
+  gap: 30px;
+}
+
+h4 {
+  color: white;
+}
+
+pre {
+  color: white;
+  translate: -62px;
+}

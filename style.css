@@ -1,27 +1,40 @@
 body {
-  background: local;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
+    background: #2c2d32;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h2 {
-  color: white;
+    color: #94c02f;
 }
 
-ul{
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 1400px;
-  gap: 30px;
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 1400px;
+    gap: 0 30px;
 }
 
 h4 {
-  color: white;
+    background-color: #1b1c20;
+    padding: 5px 10px;
 }
 
 pre {
-  color: white;
-  translate: -62px;
+    color: #777;
+    translate: -62px;
+}
+
+@media (width < 1200px) {
+    ul {
+        height: 2200px;
+    }
+}
+
+@media (width < 840px) {
+    ul {
+        height: unset;
+    }
 }
